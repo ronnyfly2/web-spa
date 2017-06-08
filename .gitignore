@@ -1,0 +1,9 @@
+.DS_Store
+web-spa/node_modules/
+web-spa/dist/
+web-spa/npm-debug.log*
+web-spa/yarn-debug.log*
+web-spa/yarn-error.log*
+web-spa/test/unit/coverage
+web-spa/test/e2e/reports
+web-spa/selenium-debug.log
