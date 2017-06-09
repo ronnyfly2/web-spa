@@ -7,3 +7,4 @@ web-spa/yarn-error.log*
 web-spa/test/unit/coverage
 web-spa/test/e2e/reports
 web-spa/selenium-debug.log
+api-rest/restaurantes-api.php

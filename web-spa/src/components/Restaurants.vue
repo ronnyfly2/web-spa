@@ -1,17 +1,29 @@
 <template lang="pug">
-	h1 {{ msg }}
+	h1 {{ msg }} : {{ restaurantsApi }}
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
 	name: 'restaurant',
-	mounted (){
-		this.id_featured = this.$route.params.id;
+	mounted () {
+		this.getRestaurants()
 	},
 	data () {
 		return {
 			msg: 'Vue, say Restaurant list',
-			id_featured : null
+			restaurantsApi: null
+		}
+	},
+	methods: {
+		getRestaurants(){
+			axios.get('http://local.web-api/restaurantes-api.php/restaurantes').then(
+				(api) => {
+					this.restaurantsApi = api.data
+					console.log(api)
+				}
+			)
 		}
 	}
 }
