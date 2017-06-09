@@ -1,6 +1,6 @@
 <template lang="pug">
 	.restaurante-add
-		h2 Crear nuevo restaurante
+		h2 {{msg}}
 		form(v-on:submit.prevent="saveRestaurant")
 			<p>
 				<label>Nombre</label>
@@ -9,6 +9,10 @@
 			<p>
 				<label>Dirección</label>
 				<input type="text" v-model="restaurante.direccion">
+			</p>
+			<p>
+				<label>imagen</label>
+				<input type="text" v-model="restaurante.imagen">
 			</p>
 			<p>
 				<label>Descripción</label>
@@ -37,7 +41,7 @@ export default {
 	},
 	data(){
 		return {
-			msg: 'Vue, say Home',
+			msg: 'Vue, say Add',
 			restaurante: {
 				nombre: '',
 				direccion: '',
@@ -49,7 +53,9 @@ export default {
 	methods: {
 		saveRestaurant(){
 			var router = this.$router;
-
+			var config = {
+				headers: {'X-My-Custom-Header': '*'}
+			}
 			var params = "json="+JSON.stringify(this.restaurante);
 			axios.post('http://local.web-api/restaurantes-api.php/restaurantes', params)
 						.then((respuesta)=>{
@@ -61,7 +67,7 @@ export default {
 
 						})
 						.catch((error)=>{
-							console.log(error);
+							console.log('ajaaaa',error);
 						});
 		}
 	}

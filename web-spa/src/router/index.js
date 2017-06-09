@@ -8,7 +8,6 @@ import Featured from '@/components/Featured'
 import Contact from '@/components/Contact'
 
 Vue.use(Router)
-console.log(Featured)
 
 export default new Router({
 	mode: 'history',
