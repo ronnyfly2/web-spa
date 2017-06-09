@@ -2,8 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
 import Hello from '@/components/Hello'
-import Featured from '@/components/Featured'
 import Restaurants from '@/components/Restaurants'
+import RestaurantAdd from '@/components/RestaurantAdd'
+import Featured from '@/components/Featured'
 import Contact from '@/components/Contact'
 
 Vue.use(Router)
@@ -21,6 +22,11 @@ export default new Router({
 			path: '/hello',
 			name: 'Hello',
 			component: Hello
+		},
+		{
+			path: '/restaurant-add',
+			name: 'RestaurantAdd',
+			component: RestaurantAdd
 		},
 		{
 			path: '/restaurants',

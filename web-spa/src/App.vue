@@ -13,6 +13,8 @@
 			router-link(:to="{name:'Featured', params:{id:16}}") Featured
 		li
 			router-link(to="/contact") Contact us
+		li
+			router-link(to="/restaurant-add") Restaurant add
 	router-view
 </template>
 
