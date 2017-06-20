@@ -1,48 +1,39 @@
 <template lang="pug">
-#app
-	img(src="./assets/img/logo.png")
-	h2 Menu
-	ul
-		li
-			router-link(to="/") Home
-		li
-			router-link(to="/hello") Hello
-		li
-			router-link(to="/restaurants") Restaurant List
-		li
-			router-link(:to="{name:'Featured', params:{id:16}}") Featured
-		li
-			router-link(to="/contact") Contact us
-		li
-			router-link(to="/restaurant-add") Restaurant add
+#app.container
+	ListMenu
 	router-view
 </template>
 
 <script>
+import ListMenu from './components/ListMenu.vue'
 export default {
+	components:{
+		ListMenu
+	},
 	name: 'app'
 }
 </script>
 
 <style lang="stylus">
+body
+	height 100%
+	width 100%
 #app
 	font-family 'Avenir', Helvetica, Arial, sans-serif
 	-webkit-font-smoothing antialiased
 	-moz-osx-font-smoothing grayscale
 	text-align center
 	color #2c3e50
-	margin-top 60px
+	width 100%
+	height 100%
 h1, h2
 	font-weight normal
-
-ul
-	list-style-type none
-	padding 0
-
-li
-	display inline-block
-	margin 0 10px
-
-a
-	color #42b983
+.container
+	//background white url('./assets/img/fondo.jpg') no-repeat
+	//background-size cover
+	background #f3f9ff
+	width 100%
+	height 100%
+	box-shadow 2px 3px 0 red
+	background linear-gradient(top, beige, bisque)
 </style>
